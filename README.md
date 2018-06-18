@@ -1,2 +1,0 @@
-# Mavenrepo
-maven projects
