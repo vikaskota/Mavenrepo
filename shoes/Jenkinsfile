@@ -1,0 +1,14 @@
+def workspace
+node()
+{
+    stage ('checkout')
+{
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '892a95e2-9b0f-4995-95cf-847e4a3a539b', url: 'https://github.com/vikaskota/Mavenrepo.git']]])
+    workspace =pwd()
+    
+}
+    stage('unittesting')
+    {
+        echo "unit testing"
+    }
+}
